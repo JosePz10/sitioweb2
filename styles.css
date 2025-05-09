@@ -1,0 +1,160 @@
+/* Fondo y tipografía */
+body {
+    background: linear-gradient(45deg, #ff6a00, #ee0979, #42a5f5); /* Gradiente de colores en diagonal */
+    background-size: 400% 400%; /* Tamaño del gradiente */
+    font-family: 'Roboto', sans-serif; /* Tipografía principal */
+    animation: backgroundAnimation 6s infinite linear, fadeIn 1s ease-in-out; /* Animaciones de fondo y entrada */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla */
+    display: flex;
+    align-items: center; /* Centrado vertical */
+    justify-content: center; /* Centrado horizontal */
+}
+
+/* Fondo dinámico desde la esquina superior derecha a inferior izquierda */
+@keyframes backgroundAnimation {
+    0% {
+        background-position: top right;
+    }
+    50% {
+        background-position: bottom left;
+    }
+    100% {
+        background-position: top right;
+    }
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Empieza invisible */
+    }
+    to {
+        opacity: 1; /* Finaliza completamente visible */
+    }
+}
+
+/* Contenedor principal */
+.container {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa); /* Gradiente en el fondo */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Sombra para dar profundidad */
+    padding: 40px;
+    width: 100%;
+    max-width: 900px; /* Ancho máximo para el contenedor */
+    animation: slideUp 0.8s ease-out; /* Animación para subir desde abajo */
+}
+
+/* Animación de deslizamiento */
+@keyframes slideUp {
+    from {
+        transform: translateY(50px); /* Comienza desplazado hacia abajo */
+        opacity: 0; /* Empieza invisible */
+    }
+    to {
+        transform: translateY(0); /* Finaliza en su posición original */
+        opacity: 1; /* Se vuelve completamente visible */
+    }
+}
+
+/* Títulos */
+h1 {
+    text-align: center; /* Centrado del texto */
+    color: #333; /* Color del texto */
+    font-size: 2.5rem; /* Tamaño de la fuente */
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-weight: bold; /* Negrita */
+}
+
+/* Formularios */
+.form-label {
+    font-weight: 500;
+    color: #555; /* Color de las etiquetas de los formularios */
+}
+
+.form-control {
+    border: 2px solid #ddd; /* Borde gris claro */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para el borde y la sombra */
+}
+
+.form-control:focus {
+    border-color: #00c6ff; /* Cambio de color del borde cuando el input está en foco */
+    box-shadow: 0 0 10px rgba(0, 198, 255, 0.7); /* Sombra cuando el input está en foco */
+}
+
+/* Botones */
+button {
+    background: linear-gradient(120deg, #12c2e9, #c471ed, #f7797d); /* Gradiente de colores */
+    border: none;
+    color: white; /* Color de texto blanco */
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 12px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de puntero para indicar clickeable */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease; /* Efectos de transición al interactuar */
+}
+
+button:hover {
+    transform: scale(1.05); /* Aumento del tamaño al pasar el ratón */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra al pasar el ratón */
+}
+
+button:active {
+    transform: scale(0.95); /* Reducción del tamaño al hacer clic */
+}
+
+/* Botones personalizados */
+button.register {
+    background: linear-gradient(120deg, #28a745, #218838); /* Gradiente verde para registrar */
+}
+
+button.edit {
+    background: linear-gradient(120deg, #ffc107, #ff9800); /* Gradiente amarillo para editar */
+}
+
+button.delete {
+    background: linear-gradient(120deg, #dc3545, #c82333); /* Gradiente rojo para eliminar */
+}
+
+/* Tabla */
+.table {
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    border-collapse: separate; /* Separación de celdas */
+    border-spacing: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra de la tabla */
+}
+
+.table thead th {
+    background: linear-gradient(120deg, #12c2e9, #c471ed); /* Gradiente en el encabezado */
+    color: white; /* Texto blanco */
+    text-align: center; /* Centrado de texto */
+    font-weight: bold; /* Negrita */
+    padding: 15px; /* Relleno de celdas */
+}
+
+.table tbody td {
+    text-align: center; /* Centrado de texto */
+    padding: 15px; /* Relleno de celdas */
+    color: #555; /* Color de texto */
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Fondo gris claro en las filas impares */
+}
+
+.table tbody tr:hover {
+    background-color: rgba(103, 128, 159, 0.1); /* Efecto de hover para las filas */
+    transition: background-color 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+/* Pie de tabla */
+.table tfoot td {
+    font-weight: bold; /* Negrita para el pie de tabla */
+    color: #444; /* Color del texto */
+    background-color: #f1f1f1; /* Fondo claro para el pie de tabla */
+}

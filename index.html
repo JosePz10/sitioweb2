@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Reservas</title>
+  <!-- Bootstrap CSS para estilos rápidos y responsivos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Archivo CSS personalizado para agregar estilos adicionales -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Gestión de Reservas</h1>
+    
+    <!-- Formulario para el registro de reservas -->
+    <form id="reservaForm" class="mb-4">
+      <!-- Campo para el nombre del usuario -->
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre Completo</label>
+        <input type="text" class="form-control" id="nombre" placeholder="Ingresa tu nombre completo" required>
+      </div>
+      
+      <!-- Campo para el código de matrícula del usuario -->
+      <div class="mb-3">
+        <label for="matricula" class="form-label">Código de Matrícula</label>
+        <input type="text" class="form-control" id="matricula" placeholder="8 dígitos numéricos" maxlength="8" required>
+        <!-- Mensaje de validación en caso de error -->
+        <div id="validacionMatricula" class="text-danger d-none">
+          <i class="bi bi-exclamation-circle"></i> El código debe ser de 8 dígitos numéricos.
+        </div>
+        <!-- Mensaje de confirmación si la matrícula es válida -->
+        <div id="matriculaCorrecta" class="text-success d-none">
+          <i class="bi bi-check-circle"></i> Matrícula válida.
+        </div>
+      </div>
+      
+      <!-- Selección de la actividad a registrar -->
+      <div class="mb-3">
+        <label for="actividad" class="form-label">Tipo de Actividad</label>
+        <select class="form-select" id="actividad" required>
+          <option value="">Selecciona una actividad</option>
+          <option value="Teatro">Teatro</option>
+          <option value="Taller de Dibujo">Taller de Dibujo</option>
+          <option value="Club de Lectura">Club de Lectura</option>
+          <option value="Excursión Cultural">Excursión Cultural</option>
+        </select>
+      </div>
+      
+      <!-- Campo para seleccionar la fecha de la actividad -->
+      <div class="mb-3">
+        <label for="fecha" class="form-label">Fecha</label>
+        <input type="date" class="form-control" id="fecha" required>
+      </div>
+      
+      <!-- Botones para registrar la reserva y generar la impresión -->
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-primary">Registrar Reserva</button>
+        <button id="btnImprimir" class="btn btn-secondary">Imprimir Reservas</button>
+      </div>
+    </form>
+    
+    <!-- Tabla que muestra las reservas registradas -->
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Matrícula</th>
+          <th>Actividad</th>
+          <th>Fecha</th>
+          <th>Acciones</th> <!-- Columnas para editar o eliminar una reserva -->
+        </tr>
+      </thead>
+      <tbody id="tablaReservas"></tbody> <!-- Aquí se generarán las filas dinámicamente -->
+    </table>
+  </div>
+
+  <!-- Iconos de Bootstrap para validaciones visuales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+  <!-- Archivo JavaScript que contiene la lógica de la aplicación -->
+  <script src="script.js"></script>
+</body>
+</html>
